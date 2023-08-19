@@ -1,0 +1,15 @@
+<form class="login-form" [formGroup]="loginForm">
+    <h2>Login form</h2>
+    <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" name="email">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input formControlName="password" matInput [type]="showPassword ? 'text' : 'password'" name="password">
+        <mat-icon matSuffix (click)="togglePasswordVisibility()">
+            {{showPassword?'visibility_off':'visibility'}}
+        </mat-icon>
+    </mat-form-field>
+    <button (click)="handleSubmit()" mat-raised-button type="submit" color="primary">Login</button>
+</form>
